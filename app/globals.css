@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary-blue: #0194F3;
+  --primary-blue-hover: #0174C7;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary-blue);
+  --color-primary-hover: var(--primary-blue-hover);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.swiper-pagination-bullet-custom {
+  width: 12px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active-custom {
+  background: rgba(255, 255, 255, 0.9);
+  transform: scale(1.2);
+}
+
+.swiper-pagination-bullet-custom:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+@keyframes float-1 {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  25% { transform: translateY(-20px) translateX(10px); }
+  50% { transform: translateY(-10px) translateX(20px); }
+  75% { transform: translateY(-15px) translateX(5px); }
+}
+
+@keyframes float-2 {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  33% { transform: translateY(-15px) translateX(-10px); }
+  66% { transform: translateY(-25px) translateX(15px); }
+}
+
+@keyframes float-3 {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  20% { transform: translateY(-10px) translateX(-15px); }
+  40% { transform: translateY(-20px) translateX(-5px); }
+  60% { transform: translateY(-15px) translateX(-20px); }
+  80% { transform: translateY(-5px) translateX(-10px); }
+}
+
+@keyframes float-4 {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  25% { transform: translateY(15px) translateX(-10px); }
+  50% { transform: translateY(25px) translateX(-20px); }
+  75% { transform: translateY(10px) translateX(-15px); }
+}
+
+@keyframes float-5 {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  30% { transform: translateY(20px) translateX(15px); }
+  60% { transform: translateY(10px) translateX(25px); }
+}
+
+@keyframes float-6 {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  40% { transform: translateY(15px) translateX(-15px); }
+  80% { transform: translateY(25px) translateX(10px); }
+}
+
+@keyframes float-7 {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  35% { transform: translateY(-15px) translateX(20px); }
+  70% { transform: translateY(10px) translateX(30px); }
+}
+
+@keyframes float-8 {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  25% { transform: translateY(-20px) translateX(-15px); }
+  50% { transform: translateY(15px) translateX(-25px); }
+  75% { transform: translateY(-10px) translateX(-20px); }
+}
+
+.animate-float-1 { animation: float-1 8s ease-in-out infinite; }
+.animate-float-2 { animation: float-2 10s ease-in-out infinite 1s; }
+.animate-float-3 { animation: float-3 12s ease-in-out infinite 2s; }
+.animate-float-4 { animation: float-4 9s ease-in-out infinite 0.5s; }
+.animate-float-5 { animation: float-5 11s ease-in-out infinite 1.5s; }
+.animate-float-6 { animation: float-6 7s ease-in-out infinite 3s; }
+.animate-float-7 { animation: float-7 13s ease-in-out infinite 2.5s; }
+.animate-float-8 { animation: float-8 9.5s ease-in-out infinite 4s; }
+.bg-vector { background-image: url('/vextor.png'); background-size: contain; background-repeat: no-repeat; }
