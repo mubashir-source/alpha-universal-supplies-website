@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import Navigation from "../components/Navigation";
 import { BreadcrumbBanner } from "../components";
 import Footer from "../components/Footer";
@@ -14,44 +15,44 @@ export default function Category() {
   const categories = [
     {
       id: 1,
-      name: "Electronics",
-      description: "Latest gadgets and electronic devices",
-      image: "📱",
+      name: "Corporate & Office Supplies",
+      description: "Office equipment, stationery, and workspace essentials",
+      image: "/corporateofficesupplies/corporateofficesupplies.png",
       productCount: 150
     },
     {
       id: 2,
-      name: "Fashion",
-      description: "Trendy clothing and accessories",
-      image: "👕",
+      name: "Restaurant & Catering Supplies",
+      description: "Food service equipment and catering essentials",
+      image: "/Restaurant & Catering Supplies/Restaurant & Catering Supplies.png",
       productCount: 200
     },
     {
       id: 3,
-      name: "Home & Garden",
-      description: "Everything for your home and garden",
-      image: "🏠",
+      name: "Construction & Maintenance",
+      description: "Tools, safety equipment, and maintenance supplies",
+      image: "/Construction & Maintenance/Construction & Maintenance.png",
       productCount: 120
     },
     {
       id: 4,
-      name: "Sports & Fitness",
-      description: "Sports equipment and fitness gear",
-      image: "⚽",
+      name: "Medical Supplies & PPE",
+      description: "Healthcare products and personal protective equipment",
+      image: "/Medical Supplies & PPE/Medical Supplies & PPE.png",
       productCount: 80
     },
     {
       id: 5,
-      name: "Books & Media",
-      description: "Books, movies, and educational content",
-      image: "📚",
+      name: "Cleaning Products",
+      description: "Industrial and commercial cleaning supplies",
+      image: "/Cleaning Products/Cleaning Products.png",
       productCount: 300
     },
     {
       id: 6,
-      name: "Health & Beauty",
-      description: "Health products and beauty essentials",
-      image: "💄",
+      name: "Safety Equipment",
+      description: "Workplace safety gear and protective equipment",
+      image: "/Construction & Maintenance/Construction & Maintenance 2.png",
       productCount: 90
     }
   ];
@@ -62,7 +63,8 @@ export default function Category() {
         <Navigation currentPage="/category" />
         <BreadcrumbBanner title="Product Categories" breadcrumbs={[{ label: "Home", href: "/" }, { label: "Product Categories", href: "/category" }]} />
       </div>
-      
+   
+
       {/* Product Search Section */}
       <ProductSearchSection 
         onSearch={setSearchQuery}

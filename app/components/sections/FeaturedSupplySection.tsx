@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import Button from "../ui/Button";
 
 interface SupplyCategory {
@@ -22,18 +23,21 @@ export default function FeaturedSupplySection({
       id: 1,
       title: "Office Essentials Kit",
       description: "Cables, keyboards, and workspace tools.",
+      image: "/corporateofficesupplies/corporateofficesupplies.png",
       link: "/category/office-essentials",
     },
     {
       id: 2,
       title: "Restaurant Starter Pack",
       description: "To-go boxes, foils, napkins, and sanitizers.",
+      image: "/Restaurant & Catering Supplies/Restaurant & Catering Supplies.png",
       link: "/category/restaurant-supplies",
     },
     {
       id: 3,
       title: "Safety & Maintenance Gear",
       description: "Gloves, goggles, and protective clothing.",
+      image: "/Construction & Maintenance/Construction & Maintenance.png",
       link: "/category/safety-gear",
     },
   ];
@@ -77,27 +81,16 @@ export default function FeaturedSupplySection({
               href={category.link}
               className="block group"
             >
-              <div className="bg-linear-to-br from-gray-300 to-gray-500 rounded-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-1">
-                {/* Image Placeholder */}
-                <div className="h-100 bg-linear-to-br from-gray-400 to-gray-600 flex items-center justify-center relative overflow-hidden">
-                  <div className="absolute inset-0 bg-linear-to-t from-black/30 to-transparent"></div>
-                  {/* Image Icon Placeholder */}
-                  <div className="relative z-10">
-                    <svg 
-                      className="w-16 h-16 text-white/70" 
-                      fill="none" 
-                      stroke="currentColor" 
-                      viewBox="0 0 24 24"
-                    >
-                      <path 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round" 
-                        strokeWidth={1.5} 
-                        d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" 
-                      />
-                      <circle cx="12" cy="12" r="1" fill="currentColor" />
-                    </svg>
-                  </div>
+              <div className="bg-white rounded-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-1 border border-gray-200">
+                {/* Category Image */}
+                <div className="h-100 relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent z-10"></div>
+                  <Image
+                    src={category.image || "/a2febbb8c29cae9617056e08d9030046f22cc9d4.png"}
+                    alt={category.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
                 
                 {/* Content */}

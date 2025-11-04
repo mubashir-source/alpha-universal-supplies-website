@@ -22,7 +22,7 @@ export default function SupplyCategoriesSection({ className = '' }: SupplyCatego
       id: 'corporate',
       title: 'Corporate & Office Supplies',
       description: 'Equip your workspace with essential tools and technology. From office furniture and equipment to stationery and IT accessories, we supply everything that keeps your business running efficiently.',
-      image: '/a2febbb8c29cae9617056e08d9030046f22cc9d4.png',
+      image: '/corporateofficesupplies/corporateofficesupplies.png',
       buttonText: 'View Category',
       buttonLink: '/category'
     },
@@ -30,7 +30,7 @@ export default function SupplyCategoriesSection({ className = '' }: SupplyCatego
       id: 'restaurant',
       title: 'Restaurant & Catering Supplies',
       description: 'Complete solutions for your food service business. From commercial kitchen equipment to dining essentials, we provide quality supplies that meet industry standards and help your restaurant succeed.',
-      image: '/a2febbb8c29cae9617056e08d9030046f22cc9d4.png',
+      image: '/Restaurant & Catering Supplies/Restaurant & Catering Supplies.png',
       buttonText: 'View Category',
       buttonLink: '/category'
     },
@@ -38,7 +38,7 @@ export default function SupplyCategoriesSection({ className = '' }: SupplyCatego
       id: 'construction',
       title: 'Construction & Maintenance',
       description: 'Professional-grade tools and materials for construction and maintenance projects. Safety equipment, power tools, building materials, and maintenance supplies for all your project needs.',
-      image: '/a2febbb8c29cae9617056e08d9030046f22cc9d4.png',
+      image: '/Construction & Maintenance/Construction & Maintenance.png',
       buttonText: 'View Category',
       buttonLink: '/category'
     },
@@ -46,7 +46,7 @@ export default function SupplyCategoriesSection({ className = '' }: SupplyCatego
       id: 'medical',
       title: 'Medical & Cleaning Products',
       description: 'Healthcare and hygiene solutions for medical facilities and businesses. Medical supplies, cleaning products, sanitization equipment, and safety gear to maintain health standards.',
-      image: '/a2febbb8c29cae9617056e08d9030046f22cc9d4.png',
+      image: '/Medical Supplies & PPE/Medical Supplies & PPE.png',
       buttonText: 'View Category',
       buttonLink: '/category'
     }

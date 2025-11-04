@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import ProductDetailModal from '../ui/ProductDetailModal';
 
 interface Product {
@@ -39,71 +40,71 @@ export default function CategoryFilterSection({ searchQuery = '', onSearchResult
 
   const categories: Category[] = [
     { id: 'all', label: 'All Products', count: 48 },
-    { id: 'electronics', label: 'Electronics', count: 12 },
-    { id: 'accessories', label: 'Accessories', count: 15 },
-    { id: 'smart-home', label: 'Smart Home', count: 8 },
-    { id: 'gaming', label: 'Gaming', count: 6 },
-    { id: 'office', label: 'Office Supplies', count: 7 }
+    { id: 'office', label: 'Office Supplies', count: 12 },
+    { id: 'restaurant', label: 'Restaurant Supplies', count: 15 },
+    { id: 'construction', label: 'Construction & Maintenance', count: 8 },
+    { id: 'medical', label: 'Medical Supplies', count: 6 },
+    { id: 'cleaning', label: 'Cleaning Products', count: 7 }
   ];
 
   const allProducts: Product[] = [
-    // Electronics
-    { id: 1, name: 'Professional Laptop Stand', description: 'Ergonomic aluminum laptop stand for better posture and productivity.', category: 'electronics' },
-    { id: 2, name: 'Wireless Charging Pad', description: 'Fast wireless charging for all compatible devices with LED indicator.', category: 'electronics' },
-    { id: 3, name: 'Bluetooth Headphones', description: 'Premium noise-canceling headphones with 30-hour battery life.', category: 'electronics' },
-    { id: 4, name: 'Smart Watch Series 8', description: 'Advanced fitness tracking with heart rate monitor and GPS.', category: 'electronics' },
-    { id: 5, name: 'Portable Power Bank', description: '20000mAh high-capacity power bank with fast charging technology.', category: 'electronics' },
-    { id: 6, name: 'USB-C Hub Adapter', description: 'Multi-port hub with HDMI, USB 3.0, and SD card reader.', category: 'electronics' },
-    { id: 7, name: 'Webcam HD 1080p', description: 'High-definition webcam with auto-focus and noise reduction.', category: 'electronics' },
-    { id: 8, name: 'Portable SSD Drive', description: '1TB portable SSD with USB-C connectivity and fast transfer.', category: 'electronics' },
-    { id: 9, name: 'Bluetooth Speaker', description: 'Waterproof Bluetooth speaker with 360-degree sound.', category: 'electronics' },
-    { id: 10, name: 'Laptop Cooling Pad', description: 'Laptop cooling pad with adjustable fans and LED lighting.', category: 'electronics' },
-    { id: 11, name: 'USB Flash Drive', description: 'High-speed USB 3.0 flash drive with metal casing.', category: 'electronics' },
-    { id: 12, name: 'Portable Monitor', description: 'USB-C portable monitor for dual-screen productivity.', category: 'electronics' },
-
-    // Accessories
-    { id: 13, name: 'Smartphone Case Pro', description: 'Military-grade protection with wireless charging compatibility.', category: 'accessories' },
-    { id: 14, name: 'Tablet Stand Holder', description: 'Adjustable tablet stand for hands-free viewing and video calls.', category: 'accessories' },
-    { id: 15, name: 'Phone Car Mount', description: 'Magnetic car mount with 360-degree rotation and secure grip.', category: 'accessories' },
-    { id: 16, name: 'Screen Protector Kit', description: 'Tempered glass screen protector with installation kit.', category: 'accessories' },
-    { id: 17, name: 'Wireless Charger Stand', description: 'Fast wireless charging stand with adjustable viewing angle.', category: 'accessories' },
-    { id: 18, name: 'Cable Management Kit', description: 'Complete cable organization solution for clean workspace.', category: 'accessories' },
-    { id: 19, name: 'Monitor Stand Riser', description: 'Adjustable monitor stand with storage drawer underneath.', category: 'accessories' },
-    { id: 20, name: 'Wireless Car Charger', description: 'Fast wireless car charger with automatic clamping.', category: 'accessories' },
-    { id: 21, name: 'Bluetooth Tracker', description: 'Small Bluetooth tracker for keys, wallet, and belongings.', category: 'accessories' },
-    { id: 22, name: 'Desk Organizer Set', description: 'Bamboo desk organizer with multiple compartments.', category: 'accessories' },
-    { id: 23, name: 'LED Desk Lamp', description: 'Adjustable LED desk lamp with touch control and USB charging.', category: 'accessories' },
-    { id: 24, name: 'Wireless Keyboard', description: 'Slim wireless keyboard with backlight and long battery life.', category: 'accessories' },
-    { id: 25, name: 'Wireless Mouse', description: 'Precision wireless mouse with ergonomic design and long battery.', category: 'accessories' },
-    { id: 26, name: 'Mechanical Keyboard', description: 'RGB backlit mechanical keyboard with tactile switches.', category: 'accessories' },
-    { id: 27, name: 'Gaming Mouse Pad', description: 'Large gaming mouse pad with RGB lighting and smooth surface.', category: 'accessories' },
-
-    // Smart Home
-    { id: 28, name: 'Smart Home Hub', description: 'Central control hub for all your smart home devices.', category: 'smart-home' },
-    { id: 29, name: 'Smart Doorbell', description: 'WiFi video doorbell with motion detection and cloud storage.', category: 'smart-home' },
-    { id: 30, name: 'Smart Light Bulbs', description: 'Color-changing smart bulbs with voice control compatibility.', category: 'smart-home' },
-    { id: 31, name: 'Smart Thermostat', description: 'WiFi-enabled thermostat with energy-saving features.', category: 'smart-home' },
-    { id: 32, name: 'Smart Plug Set', description: 'WiFi smart plugs with voice control and scheduling.', category: 'smart-home' },
-    { id: 33, name: 'Smart Security Camera', description: 'Indoor security camera with night vision and two-way audio.', category: 'smart-home' },
-    { id: 34, name: 'Robot Vacuum', description: 'Smart robot vacuum with mapping and app control.', category: 'smart-home' },
-    { id: 35, name: 'Air Purifier Pro', description: 'HEPA air purifier with smart sensors and app control.', category: 'smart-home' },
-
-    // Gaming
-    { id: 36, name: 'Gaming Chair Pro', description: 'Ergonomic gaming chair with lumbar support and RGB lighting.', category: 'gaming' },
-    { id: 37, name: 'VR Headset Pro', description: 'Next-generation VR headset with 4K display and spatial audio.', category: 'gaming' },
-    { id: 38, name: 'Action Camera 4K', description: 'Waterproof action camera with image stabilization.', category: 'gaming' },
-    { id: 39, name: 'Gaming Headset', description: 'Professional gaming headset with surround sound and noise cancellation.', category: 'gaming' },
-    { id: 40, name: 'Gaming Controller', description: 'Wireless gaming controller with customizable buttons and RGB.', category: 'gaming' },
-    { id: 41, name: 'Gaming Monitor 4K', description: '27-inch 4K gaming monitor with 144Hz refresh rate.', category: 'gaming' },
-
     // Office Supplies
-    { id: 42, name: 'Standing Desk Converter', description: 'Height-adjustable desk converter for healthier work posture.', category: 'office' },
-    { id: 43, name: 'Ergonomic Office Chair', description: 'Comfortable office chair with lumbar support and adjustable height.', category: 'office' },
-    { id: 44, name: 'Wireless Charging Station', description: 'Multi-device wireless charging station with fast charging.', category: 'office' },
-    { id: 45, name: 'Document Scanner', description: 'Portable document scanner with wireless connectivity.', category: 'office' },
-    { id: 46, name: 'Label Printer', description: 'Compact label printer for office organization and shipping.', category: 'office' },
-    { id: 47, name: 'Whiteboard Set', description: 'Magnetic whiteboard with markers and eraser included.', category: 'office' },
-    { id: 48, name: 'Paper Shredder', description: 'Cross-cut paper shredder for secure document disposal.', category: 'office' }
+    { id: 1, name: 'Professional Laptop Stand', description: 'Ergonomic aluminum laptop stand for better posture and productivity.', category: 'office', image: '/corporateofficesupplies/corporateofficesupplies.png' },
+    { id: 2, name: 'Wireless Charging Pad', description: 'Fast wireless charging for all compatible devices with LED indicator.', category: 'office', image: '/corporateofficesupplies/corporateofficesupplies2.png' },
+    { id: 3, name: 'Office Desk Organizer', description: 'Premium desk organizer with multiple compartments for office supplies.', category: 'office', image: '/corporateofficesupplies/corporateofficesupplies.png' },
+    { id: 4, name: 'Ergonomic Office Chair', description: 'Adjustable office chair with lumbar support and breathable mesh.', category: 'office', image: '/corporateofficesupplies/corporateofficesupplies2.png' },
+    { id: 5, name: 'Portable Power Bank', description: '20000mAh high-capacity power bank with fast charging technology.', category: 'office', image: '/corporateofficesupplies/corporateofficesupplies.png' },
+    { id: 6, name: 'USB-C Hub Adapter', description: 'Multi-port hub with HDMI, USB 3.0, and SD card reader.', category: 'office', image: '/corporateofficesupplies/corporateofficesupplies2.png' },
+    { id: 7, name: 'Webcam HD 1080p', description: 'High-definition webcam with auto-focus and noise reduction.', category: 'office', image: '/corporateofficesupplies/corporateofficesupplies.png' },
+    { id: 8, name: 'Portable SSD Drive', description: '1TB portable SSD with USB-C connectivity and fast transfer.', category: 'office', image: '/corporateofficesupplies/corporateofficesupplies2.png' },
+    { id: 9, name: 'Wireless Keyboard & Mouse', description: 'Professional wireless keyboard and mouse combo for office use.', category: 'office', image: '/corporateofficesupplies/corporateofficesupplies.png' },
+    { id: 10, name: 'Laptop Cooling Pad', description: 'Laptop cooling pad with adjustable fans and LED lighting.', category: 'office', image: '/corporateofficesupplies/corporateofficesupplies2.png' },
+    { id: 11, name: 'USB Flash Drive', description: 'High-speed USB 3.0 flash drive with metal casing.', category: 'office', image: '/corporateofficesupplies/corporateofficesupplies.png' },
+    { id: 12, name: 'Portable Monitor', description: 'USB-C portable monitor for dual-screen productivity.', category: 'office', image: '/corporateofficesupplies/corporateofficesupplies2.png' },
+
+    // Restaurant Supplies
+    { id: 13, name: 'Commercial Food Containers', description: 'Durable food storage containers for restaurant use.', category: 'restaurant', image: '/Restaurant & Catering Supplies/Restaurant & Catering Supplies.png' },
+    { id: 14, name: 'Disposable Plates & Cups', description: 'Eco-friendly disposable plates and cups for catering.', category: 'restaurant', image: '/Restaurant & Catering Supplies/Restaurant & Catering Supplies 2.png' },
+    { id: 15, name: 'Kitchen Utensil Set', description: 'Professional kitchen utensils for commercial use.', category: 'restaurant', image: '/Restaurant & Catering Supplies/Restaurant & Catering Supplies.png' },
+    { id: 16, name: 'Food Service Gloves', description: 'Disposable food service gloves for hygiene and safety.', category: 'restaurant', image: '/Restaurant & Catering Supplies/Restaurant & Catering Supplies 2.png' },
+    { id: 17, name: 'Takeout Containers', description: 'Leak-proof takeout containers with secure lids.', category: 'restaurant', image: '/Restaurant & Catering Supplies/Restaurant & Catering Supplies.png' },
+    { id: 18, name: 'Commercial Napkins', description: 'High-quality napkins for restaurant and catering use.', category: 'restaurant', image: '/Restaurant & Catering Supplies/Restaurant & Catering Supplies 2.png' },
+    { id: 19, name: 'Food Packaging Bags', description: 'Durable food packaging bags for delivery and takeout.', category: 'restaurant', image: '/Restaurant & Catering Supplies/Restaurant & Catering Supplies.png' },
+    { id: 20, name: 'Sanitizer Dispensers', description: 'Automatic hand sanitizer dispensers for restaurants.', category: 'restaurant', image: '/Restaurant & Catering Supplies/Restaurant & Catering Supplies 2.png' },
+    { id: 21, name: 'Chef Aprons', description: 'Professional chef aprons with adjustable straps.', category: 'restaurant', image: '/Restaurant & Catering Supplies/Restaurant & Catering Supplies.png' },
+    { id: 22, name: 'Food Thermometers', description: 'Digital food thermometers for safe cooking temperatures.', category: 'restaurant', image: '/Restaurant & Catering Supplies/Restaurant & Catering Supplies 2.png' },
+    { id: 23, name: 'Aluminum Foil Rolls', description: 'Heavy-duty aluminum foil for food service and storage.', category: 'restaurant', image: '/Restaurant & Catering Supplies/Restaurant & Catering Supplies.png' },
+    { id: 24, name: 'Paper Towel Dispensers', description: 'Wall-mounted paper towel dispensers for kitchens.', category: 'restaurant', image: '/Restaurant & Catering Supplies/Restaurant & Catering Supplies 2.png' },
+    { id: 25, name: 'Food Storage Labels', description: 'Date and storage labels for food safety compliance.', category: 'restaurant', image: '/Restaurant & Catering Supplies/Restaurant & Catering Supplies.png' },
+    { id: 26, name: 'Cutting Board Set', description: 'Color-coded cutting boards for food safety.', category: 'restaurant', image: '/Restaurant & Catering Supplies/Restaurant & Catering Supplies 2.png' },
+    { id: 27, name: 'Serving Trays', description: 'Non-slip serving trays for professional food service.', category: 'restaurant', image: '/Restaurant & Catering Supplies/Restaurant & Catering Supplies.png' },
+
+    // Construction & Maintenance
+    { id: 28, name: 'Safety Hard Hats', description: 'OSHA-compliant hard hats for construction site safety.', category: 'construction', image: '/Construction & Maintenance/Construction & Maintenance.png' },
+    { id: 29, name: 'Work Gloves Set', description: 'Cut-resistant work gloves for construction and maintenance.', category: 'construction', image: '/Construction & Maintenance/Construction & Maintenance 2.png' },
+    { id: 30, name: 'Safety Goggles', description: 'Impact-resistant safety goggles with anti-fog coating.', category: 'construction', image: '/Construction & Maintenance/Construction & Maintenance.png' },
+    { id: 31, name: 'High-Vis Safety Vests', description: 'Reflective safety vests for construction workers.', category: 'construction', image: '/Construction & Maintenance/Construction & Maintenance 2.png' },
+    { id: 32, name: 'Tool Belt Set', description: 'Heavy-duty tool belt with multiple pouches and holders.', category: 'construction', image: '/Construction & Maintenance/Construction & Maintenance.png' },
+    { id: 33, name: 'Safety Boots', description: 'Steel-toe safety boots with slip-resistant soles.', category: 'construction', image: '/Construction & Maintenance/Construction & Maintenance 2.png' },
+    { id: 34, name: 'Measuring Tape Set', description: 'Professional measuring tapes for construction projects.', category: 'construction', image: '/Construction & Maintenance/Construction & Maintenance.png' },
+    { id: 35, name: 'Power Tool Accessories', description: 'Drill bits, saw blades, and power tool accessories.', category: 'construction', image: '/Construction & Maintenance/Construction & Maintenance 2.png' },
+
+    // Medical Supplies
+    { id: 36, name: 'Disposable Face Masks', description: 'Medical-grade disposable face masks for healthcare.', category: 'medical', image: '/Medical Supplies & PPE/Medical Supplies & PPE.png' },
+    { id: 37, name: 'Nitrile Gloves', description: 'Powder-free nitrile gloves for medical and laboratory use.', category: 'medical', image: '/Medical Supplies & PPE/Medical Supplies & PPE 2.png' },
+    { id: 38, name: 'Hand Sanitizer', description: 'Medical-grade hand sanitizer with 70% alcohol content.', category: 'medical', image: '/Medical Supplies & PPE/Medical Supplies & PPE.png' },
+    { id: 39, name: 'Digital Thermometers', description: 'Non-contact infrared thermometers for health screening.', category: 'medical', image: '/Medical Supplies & PPE/Medical Supplies & PPE 2.png' },
+    { id: 40, name: 'First Aid Kits', description: 'Comprehensive first aid kits for workplace safety.', category: 'medical', image: '/Medical Supplies & PPE/Medical Supplies & PPE.png' },
+    { id: 41, name: 'Medical Scrubs', description: 'Comfortable and durable medical scrubs for healthcare workers.', category: 'medical', image: '/Medical Supplies & PPE/Medical Supplies & PPE 2.png' },
+
+    // Cleaning Products
+    { id: 42, name: 'Industrial Floor Cleaner', description: 'Heavy-duty floor cleaner for commercial and industrial use.', category: 'cleaning', image: '/Cleaning Products/Cleaning Products.png' },
+    { id: 43, name: 'Disinfectant Wipes', description: 'EPA-approved disinfectant wipes for surface cleaning.', category: 'cleaning', image: '/Cleaning Products/Cleaning Products 2.png' },
+    { id: 44, name: 'All-Purpose Cleaner', description: 'Multi-surface cleaner for offices and commercial spaces.', category: 'cleaning', image: '/Cleaning Products/Cleaning Products.png' },
+    { id: 45, name: 'Microfiber Cleaning Cloths', description: 'Lint-free microfiber cloths for streak-free cleaning.', category: 'cleaning', image: '/Cleaning Products/Cleaning Products 2.png' },
+    { id: 46, name: 'Toilet Paper Bulk Pack', description: 'Commercial-grade toilet paper for high-traffic facilities.', category: 'cleaning', image: '/Cleaning Products/Cleaning Products.png' },
+    { id: 47, name: 'Trash Bags Heavy Duty', description: 'Extra-strong trash bags for commercial waste disposal.', category: 'cleaning', image: '/Cleaning Products/Cleaning Products 2.png' },
+    { id: 48, name: 'Glass Cleaner Spray', description: 'Streak-free glass cleaner for windows and mirrors.', category: 'cleaning', image: '/Cleaning Products/Cleaning Products.png' }
   ];
 
   // Filter products based on category and search query
@@ -207,21 +208,14 @@ export default function CategoryFilterSection({ searchQuery = '', onSearchResult
                   key={product.id}
                   className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300"
                 >
-                  {/* Product Image Placeholder */}
-                  <div className="bg-gray-300 h-48 flex items-center justify-center">
-                    <svg 
-                      className="w-16 h-16 text-gray-400" 
-                      fill="none" 
-                      stroke="currentColor" 
-                      viewBox="0 0 24 24"
-                    >
-                      <path 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round" 
-                        strokeWidth={1.5} 
-                        d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" 
-                      />
-                    </svg>
+                  {/* Product Image */}
+                  <div className="h-48 relative overflow-hidden">
+                    <Image
+                      src={product.image || "/a2febbb8c29cae9617056e08d9030046f22cc9d4.png"}
+                      alt={product.name}
+                      fill
+                      className="object-cover hover:scale-105 transition-transform duration-300"
+                    />
                   </div>
 
                   {/* Product Content */}

@@ -35,7 +35,7 @@ export default function Home() {
       description: "Your adventure begins here, with stunning packages and unbeatable experiences.",
       primaryAction: { label: "Explore Supplies", href: "/products" },
       secondaryAction: { label: "Register as a Vendor", href: "/seller-register" },
-      backgroundImage: "/a2febbb8c29cae9617056e08d9030046f22cc9d4.png"
+      backgroundImage: "/corporateofficesupplies/corporateofficesupplies2.png"
     },
     {
       id: 2,
@@ -44,7 +44,7 @@ export default function Home() {
       description: "From manufacturing to construction, we provide the tools and supplies that keep your business running smoothly.",
       primaryAction: { label: "View Catalog", href: "/category" },
       secondaryAction: { label: "Request Quote", href: "/quote" },
-      backgroundImage: "/a2febbb8c29cae9617056e08d9030046f22cc9d4.png"
+      backgroundImage: "/corporateofficesupplies/corporateofficesupplies2.png"
     },
     {
       id: 3,
@@ -53,7 +53,7 @@ export default function Home() {
       description: "Experience exceptional service, competitive pricing, and reliable delivery that has made us the preferred choice for businesses globally.",
       primaryAction: { label: "Our Distributors", href: "/distributors" },
         secondaryAction: { label: "Contact Us", href: "/contact" },
-        backgroundImage: "/a2febbb8c29cae9617056e08d9030046f22cc9d4.png"
+        backgroundImage: "/corporateofficesupplies/corporateofficesupplies2.png"
     }
   ];
 

@@ -22,30 +22,35 @@ export default function IndustrySection({
       id: 1,
       title: "Corporate & Office Supplies",
       description: "keyboards, cables, and stationery",
+      image: "/corporateofficesupplies/corporateofficesupplies2.png",
       link: "/category/office-supplies",
     },
     {
       id: 2,
       title: "Restaurant & Catering Supplies",
       description: "packaging, utensils, and sanitizers",
+      image: "/Restaurant & Catering Supplies/Restaurant & Catering Supplies.png",
       link: "/category/restaurant-supplies",
     },
     {
       id: 3,
-      title: "Corporate & Office Supplies",
-      description: "keyboards, cables, and stationery",
-      link: "/category/office-supplies",
+      title: "Cleaning Products",
+      description: "disinfectants, sanitizers, and cleaning tools",
+      image: "/Cleaning Products/Cleaning Products.png",
+      link: "/category/cleaning-products",
     },
     {
       id: 4,
       title: "Construction & Maintenance",
       description: "gloves, helmets, and safety tools",
+      image: "/Construction & Maintenance/Construction & Maintenance.png",
       link: "/category/construction",
     },
     {
       id: 5,
-      title: "Medical & Cleaning Supplies",
-      description: "masks, disinfectants, and wipes",
+      title: "Medical Supplies & PPE",
+      description: "masks, gloves, and medical equipment",
+      image: "/Medical Supplies & PPE/Medical Supplies & PPE.png",
       link: "/category/medical-supplies",
     },
   ];
@@ -78,7 +83,7 @@ export default function IndustrySection({
       </div>
       <div className="w-full">
         <div className="grid grid-cols-3 gap-4">
-          <div className="row-span-2 bg-gray-200 rounded-lg p-6 flex flex-col justify-end min-h-[800px] relative overflow-hidden group hover:shadow-lg transition-shadow duration-300">
+          <div className="row-span-2 bg-cover bg-center bg-no-repeat rounded-lg p-6 flex flex-col justify-end min-h-[800px] relative overflow-hidden group hover:shadow-lg transition-shadow duration-300" style={{backgroundImage: `url('${industries[0].image}')`}}>
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="relative z-10">
             <p className="text-[19px] font-normal text-white">
@@ -92,7 +97,7 @@ export default function IndustrySection({
           </div>
 
           {/* Small card - top right */}
-          <div className="bg-gray-200 rounded-lg p-4 flex flex-col justify-end min-h-[140px] relative overflow-hidden group hover:shadow-lg transition-shadow duration-300">
+          <div className="bg-cover bg-center bg-no-repeat rounded-lg p-4 flex flex-col justify-end min-h-[140px] relative overflow-hidden group hover:shadow-lg transition-shadow duration-300" style={{backgroundImage: `url('${industries[1].image}')`}}>
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="relative z-10">
             <p className="text-[19px] font-normal text-white">
@@ -106,7 +111,7 @@ export default function IndustrySection({
           </div>
 
           {/* Small card - middle right */}
-          <div className="bg-gray-200 rounded-lg p-4 flex flex-col justify-end min-h-[140px] relative overflow-hidden group hover:shadow-lg transition-shadow duration-300">
+          <div className="bg-cover bg-center bg-no-repeat rounded-lg p-4 flex flex-col justify-end min-h-[140px] relative overflow-hidden group hover:shadow-lg transition-shadow duration-300" style={{backgroundImage: `url('${industries[2].image}')`}}>
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="relative z-10">
             <p className="text-[19px] font-normal text-white">
@@ -120,7 +125,7 @@ export default function IndustrySection({
           </div>
 
           {/* Bottom row - 2 cards */}
-          <div className="bg-gray-200 rounded-lg p-4 flex flex-col justify-end min-h-[140px] relative overflow-hidden group hover:shadow-lg transition-shadow duration-300">
+          <div className="bg-cover bg-center bg-no-repeat rounded-lg p-4 flex flex-col justify-end min-h-[140px] relative overflow-hidden group hover:shadow-lg transition-shadow duration-300" style={{backgroundImage: `url('${industries[3].image}')`}}>
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="relative z-10">
             <p className="text-[19px] font-normal text-white">
@@ -133,7 +138,7 @@ export default function IndustrySection({
             </div>
           </div>
 
-          <div className="bg-gray-200 rounded-lg p-4 flex flex-col justify-end min-h-[140px] relative overflow-hidden group hover:shadow-lg transition-shadow duration-300">
+          <div className="bg-cover bg-center bg-no-repeat rounded-lg p-4 flex flex-col justify-end min-h-[140px] relative overflow-hidden group hover:shadow-lg transition-shadow duration-300" style={{backgroundImage: `url('${industries[4].image}')`}}>
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="relative z-10">
             <p className="text-[19px] font-normal text-white">

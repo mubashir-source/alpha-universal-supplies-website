@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Button from '../ui/Button';
 
 interface WorkGallerySectionProps {
@@ -12,75 +13,83 @@ export default function WorkGallerySection({ className = '' }: WorkGallerySectio
       {/* Animated Background Images */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Top Left Image */}
-        <div className="absolute top-16 left-16 w-48 h-32 bg-gray-400 rounded-lg shadow-lg animate-float-1">
-          <div className="w-full h-full flex items-center justify-center">
-            <svg className="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
-            </svg>
-          </div>
+        <div className="absolute top-16 left-16 w-48 h-32 rounded-lg shadow-lg animate-float-1 overflow-hidden">
+          <Image
+            src="/corporateofficesupplies/corporateofficesupplies.png"
+            alt="Corporate Office Supplies"
+            fill
+            className="object-cover"
+          />
         </div>
 
         {/* Top Center Image */}
-        <div className="absolute top-8 left-1/2 transform -translate-x-1/2 w-40 h-28 bg-gray-400 rounded-lg shadow-lg animate-float-2">
-          <div className="w-full h-full flex items-center justify-center">
-            <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
-            </svg>
-          </div>
+        <div className="absolute top-8 left-1/2 transform -translate-x-1/2 w-40 h-28 rounded-lg shadow-lg animate-float-2 overflow-hidden">
+          <Image
+            src="/Restaurant & Catering Supplies/Restaurant & Catering Supplies.png"
+            alt="Restaurant & Catering Supplies"
+            fill
+            className="object-cover"
+          />
         </div>
 
         {/* Top Right Image */}
-        <div className="absolute top-12 right-16 w-44 h-30 bg-gray-400 rounded-lg shadow-lg animate-float-3">
-          <div className="w-full h-full flex items-center justify-center">
-            <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
-            </svg>
-          </div>
+        <div className="absolute top-12 right-16 w-44 h-30 rounded-lg shadow-lg animate-float-3 overflow-hidden">
+          <Image
+            src="/Construction & Maintenance/Construction & Maintenance.png"
+            alt="Construction & Maintenance"
+            fill
+            className="object-cover"
+          />
         </div>
 
         {/* Far Right Image */}
-        <div className="absolute top-1/3 right-4 w-36 h-48 bg-gray-400 rounded-lg shadow-lg animate-float-4">
-          <div className="w-full h-full flex items-center justify-center">
-            <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
-            </svg>
-          </div>
+        <div className="absolute top-1/3 right-4 w-36 h-48 rounded-lg shadow-lg animate-float-4 overflow-hidden">
+          <Image
+            src="/Medical Supplies & PPE/Medical Supplies & PPE.png"
+            alt="Medical Supplies & PPE"
+            fill
+            className="object-cover"
+          />
         </div>
 
         {/* Bottom Left Image */}
-        <div className="absolute bottom-16 left-8 w-32 h-44 bg-gray-400 rounded-lg shadow-lg animate-float-5">
-          <div className="w-full h-full flex items-center justify-center">
-            <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
-            </svg>
-          </div>
+        <div className="absolute bottom-16 left-8 w-32 h-44 rounded-lg shadow-lg animate-float-5 overflow-hidden">
+          <Image
+            src="/Cleaning Products/Cleaning Products.png"
+            alt="Cleaning Products"
+            fill
+            className="object-cover"
+          />
         </div>
 
         {/* Bottom Center Image */}
-        <div className="absolute bottom-8 left-1/3 w-52 h-36 bg-gray-400 rounded-lg shadow-lg animate-float-6">
-          <div className="w-full h-full flex items-center justify-center">
-            <svg className="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
-            </svg>
-          </div>
+        <div className="absolute bottom-8 left-1/3 w-52 h-36 rounded-lg shadow-lg animate-float-6 overflow-hidden">
+          <Image
+            src="/corporateofficesupplies/corporateofficesupplies2.png"
+            alt="Corporate Office Supplies"
+            fill
+            className="object-cover"
+          />
         </div>
 
         {/* Bottom Right Image */}
-        <div className="absolute bottom-20 right-1/4 w-38 h-28 bg-gray-400 rounded-lg shadow-lg animate-float-7">
-          <div className="w-full h-full flex items-center justify-center">
-            <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
-            </svg>
-          </div>
+        <div className="absolute bottom-20 right-1/4 w-38 h-28 rounded-lg shadow-lg animate-float-7 overflow-hidden">
+          <Image
+            src="/Restaurant & Catering Supplies/Restaurant & Catering Supplies 2.png"
+            alt="Restaurant & Catering Supplies"
+            fill
+            className="object-cover"
+          />
         </div>
 
         {/* Far Bottom Right Image */}
-        <div className="absolute bottom-4 right-8 w-40 h-56 bg-gray-400 rounded-lg shadow-lg animate-float-8">
-          <div className="w-full h-full flex items-center justify-center">
-            <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
-            </svg>
-          </div>
+        <div className="absolute bottom-4 right-8 w-40 h-56 rounded-lg shadow-lg animate-float-8 overflow-hidden">
+          <Image
+            src="/Medical Supplies & PPE/Medical Supplies & PPE 2.png"
+            alt="Medical Supplies & PPE"
+            fill
+            className="object-cover"
+          />
         </div>
       </div>
 
